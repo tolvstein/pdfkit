@@ -54,7 +54,7 @@
   },
   "scripts": {
     "prepublishOnly": "npm run build",
-    "postinstall": "npm run build",
+    "postinstall": "cd ./node_modules/pdfkit && npm install && npm run build",
     "build": "rollup -c && browserify --standalone PDFDocument --ignore crypto --ignore iconv-lite js/pdfkit.js > js/pdfkit.standalone.js",
     "browserify-example": "browserify examples/browserify/browser.js > examples/browserify/bundle.js",
     "pdf-guide": "node docs/generate.js",
